@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="68241" started-at="2021-06-13T14:07:39 IST" finished-at="2021-06-13T14:08:48 IST">
+    <groups>
+    </groups>
+    <test name="C:/Users/kalam/IdeaProjects/MakeMyTripAutomation/src/test/java/com/bridgelabz/makemytrip/test/MakeMyTripTest.java" duration-ms="68241" started-at="2021-06-13T14:07:39 IST" finished-at="2021-06-13T14:08:48 IST">
+      <class name="com.bridgelabz.makemytrip.test.MakeMyTripTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.bridgelabz.makemytrip.test.MakeMyTripTest@2b9627bc]" name="setUp" is-config="true" duration-ms="24508" started-at="2021-06-13T14:07:39 IST" finished-at="2021-06-13T14:08:04 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startTest()[pri:0, instance:com.bridgelabz.makemytrip.test.MakeMyTripTest@2b9627bc]" name="startTest" is-config="true" duration-ms="162" started-at="2021-06-13T14:08:04 IST" finished-at="2021-06-13T14:08:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="search_Flight()[pri:1, instance:com.bridgelabz.makemytrip.test.MakeMyTripTest@2b9627bc]" name="search_Flight" duration-ms="40693" started-at="2021-06-13T14:08:04 IST" finished-at="2021-06-13T14:08:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search_Flight -->
+        <test-method status="PASS" signature="whenOneStopFilterApplied_ShouldPrintOneStopFLights()[pri:2, instance:com.bridgelabz.makemytrip.test.MakeMyTripTest@2b9627bc]" name="whenOneStopFilterApplied_ShouldPrintOneStopFLights" duration-ms="634" started-at="2021-06-13T14:08:45 IST" finished-at="2021-06-13T14:08:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- whenOneStopFilterApplied_ShouldPrintOneStopFLights -->
+        <test-method status="PASS" signature="whenNonStopFilterApplied_ShouldPrintNonStopFLights()[pri:3, instance:com.bridgelabz.makemytrip.test.MakeMyTripTest@2b9627bc]" name="whenNonStopFilterApplied_ShouldPrintNonStopFLights" duration-ms="612" started-at="2021-06-13T14:08:45 IST" finished-at="2021-06-13T14:08:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- whenNonStopFilterApplied_ShouldPrintNonStopFLights -->
+        <test-method status="PASS" signature="whenGivenListOfFlight_ShouldBookFlight()[pri:4, instance:com.bridgelabz.makemytrip.test.MakeMyTripTest@2b9627bc]" name="whenGivenListOfFlight_ShouldBookFlight" duration-ms="1362" started-at="2021-06-13T14:08:46 IST" finished-at="2021-06-13T14:08:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- whenGivenListOfFlight_ShouldBookFlight -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.bridgelabz.makemytrip.test.MakeMyTripTest@2b9627bc]" name="endTest" is-config="true" duration-ms="246" started-at="2021-06-13T14:08:47 IST" finished-at="2021-06-13T14:08:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- com.bridgelabz.makemytrip.test.MakeMyTripTest -->
+    </test> <!-- C:/Users/kalam/IdeaProjects/MakeMyTripAutomation/src/test/java/com/bridgelabz/makemytrip/test/MakeMyTripTest.java -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

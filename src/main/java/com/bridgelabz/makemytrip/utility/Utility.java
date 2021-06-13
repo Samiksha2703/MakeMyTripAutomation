@@ -1,6 +1,15 @@
 package com.bridgelabz.makemytrip.utility;
 
-public class Utility {
+import com.bridgelabz.makemytrip.base.Base;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import javax.management.BadAttributeValueExpException;
+import java.io.File;
+import java.io.IOException;
+
+public class Utility extends Base {
 
     //method to get integer string from string
     public static String getIntString(String str) {
@@ -25,5 +34,15 @@ public class Utility {
     public static String[] getArrayOfString(String str){
         String strArray[] = str.split(" ");
         return strArray;
+    }
+
+    //Method to take a screenshot
+    public static String screenshot(String fileName) throws IOException {
+        File file = ((TakesScreenshot)webdriver).getScreenshotAs(OutputType.FILE);
+        File dest = new File("C:\\Users\\kalam\\IdeaProjects\\BookswagonAutomationProgram\\src\\main\\resources\\Screenshot/"+fileName+System.currentTimeMillis()+".jpg");
+        String filePath = dest.getAbsolutePath();
+        FileUtils.copyFile(file, dest);
+        System.out.println("Screenshot Taken for "+fileName);
+        return filePath;
     }
 }
