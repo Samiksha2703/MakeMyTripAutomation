@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/kalam/IdeaProjects/MakeMyTripAutomation/src/test/java/com/bridgelabz/makemytrip/test/MakeMyTripTest.java">
+        <parameter name="browserName" value="chrome"></parameter>
+        <classes>
+            <class name="com.bridgelabz.makemytrip.test.MakeMyTripTest">
+                <methods>
+                    <include name="search_Flight"/>
+                    <include name="whenOneStopFilterApplied_ShouldPrintOneStopFLights"/>
+                    <include name="whenNonStopFilterApplied_ShouldPrintNonStopFLights"/>
+                    <include name="whenGivenListOfFlight_ShouldBookFlight"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
