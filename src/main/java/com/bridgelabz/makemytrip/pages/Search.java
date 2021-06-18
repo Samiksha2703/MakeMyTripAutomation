@@ -11,8 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -117,11 +115,11 @@ public class Search {
             flights.add(flightItr.next().getText());
             flightNo++;
         }
-//        flights.forEach(element -> {
-//            System.out.println(element);
-//            System.out.println(" ");
-//        });
-//        System.out.println("Total no of Flight : " + flightNo);
+        flights.forEach(element -> {
+            System.out.println(element);
+            System.out.println(" ");
+        });
+        System.out.println("Total no of Flight : " + flightNo);
     }
 
     //method to search and print one stop flights for round trip
@@ -134,12 +132,12 @@ public class Search {
             String oneStop = itrOneStop.next().toString();
             oneStopFlights.add(oneStop);
         }
-//        System.out.println("\n*****************************************\nOne Stop Flight List");
-//        oneStopFlights.forEach(element -> {
-//            System.out.println(element);
-//            System.out.println(" ");
-//        });
-//        System.out.println("Total no of one stop flight : " + oneStopFlights.size());
+        System.out.println("\n*****************************************\nOne Stop Flight List");
+        oneStopFlights.forEach(element -> {
+            System.out.println(element);
+            System.out.println(" ");
+        });
+        System.out.println("Total no of one stop flight : " + oneStopFlights.size());
     }
 
     //method to search and print non stop flights for round trip
@@ -153,11 +151,11 @@ public class Search {
             String oneStop = itrOneStop.next().toString();
             nonStopFlights.add(oneStop);
         }
-//        System.out.println("\n*****************************************\nNon Stop Flight List");
-//        nonStopFlights.forEach(element -> {
-//            System.out.println(element);
-//            System.out.println(" ");
-//        });
-//        System.out.println("Total no of non stop flight : " + nonStopFlights.size());
+        System.out.println("\n*****************************************\nNon Stop Flight List");
+        nonStopFlights.forEach(element -> {
+            System.out.println(element);
+            System.out.println(" ");
+        });
+        System.out.println("Total no of non stop flight : " + nonStopFlights.size());
     }
 }

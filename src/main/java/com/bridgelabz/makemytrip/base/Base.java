@@ -6,12 +6,13 @@
 
 package com.bridgelabz.makemytrip.base;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +21,9 @@ import java.util.concurrent.TimeUnit;
 
 public class Base {
     public static WebDriver webdriver;
+    public static ExtentTest test;
+    static ExtentReports report;
+    public static ThreadLocal<WebDriver> threadLocal = new ThreadLocal<>();
 
     //method to launch browser
     @BeforeTest
@@ -32,6 +36,7 @@ public class Base {
             WebDriverManager.firefoxdriver().setup();
             webdriver = new FirefoxDriver();
         }
+        threadLocal.set(webdriver);
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try {
@@ -48,8 +53,26 @@ public class Base {
     }
 
     //method to close the session open by driver
-//    @AfterTest
-//    public void tearDown() {
-//        webdriver.close();
-//    }
+    @AfterTest
+    public void tearDown() {
+        webdriver.close();
+    }
+
+    //method to run before class to generate extent report
+    @BeforeClass
+    public static void startTest() {
+        report = new ExtentReports("C:\\Users\\kalam\\IdeaProjects\\MakeMyTripAutomation\\src\\main\\resources\\ExtentReport\\" + "ExtentReportResults.html");
+        test = report.startTest("Bookswagon Extent Report");
+    }
+
+    //method to run after class to generate extent report
+    @AfterClass
+    public static void endTest() {
+        report.endTest(test);
+        report.flush();
+    }
+
+    public static WebDriver getDriver() {
+        return threadLocal.get();
+    }
 }

@@ -18,8 +18,8 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 public class SignUp {
-    public static String Account_SID = "AC44fcc83510cf17ef705330f6c0d77b3c";
-    public static String Auth_Token = "e5b857089eff33e0169a3de80fb35cf6";
+    public static String Account_SID = "abc";
+    public static String Auth_Token = "xyz";
 
     @FindBy(xpath = "/html/body")
     WebElement homePage;

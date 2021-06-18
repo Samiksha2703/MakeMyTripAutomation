@@ -10,44 +10,27 @@ import com.bridgelabz.makemytrip.base.Base;
 import com.bridgelabz.makemytrip.pages.BookFlight;
 import com.bridgelabz.makemytrip.pages.Login;
 import com.bridgelabz.makemytrip.pages.Search;
+import com.bridgelabz.makemytrip.utility.TestNgListener;
 import com.bridgelabz.makemytrip.utility.Utility;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+@Listeners(TestNgListener.class)
 public class MakeMyTripTest extends Base {
-    static ExtentTest test;
-    static ExtentReports report;
     public Search search;
     public Login login;
     public BookFlight book;
-
-    //method to run before class to generate extent report
-    @BeforeClass
-    public static void startTest()
-    {
-        report = new ExtentReports("C:\\Users\\kalam\\IdeaProjects\\MakeMyTripAutomation\\src\\main\\resources\\ExtentReport\\"+"ExtentReportResults.html");
-        test = report.startTest("Bookswagon Extent Report");
-    }
-
-    //    @Test
-//    public void login_Into_Account() throws InterruptedException {
-//        login = new Login(webdriver);
-//        login.loginToAccount();
-//    }
 
     //test to check functionality of search feature
     @Test(priority = 1)
 
     public void search_Flight() throws InterruptedException, IOException {
         search = new Search(webdriver);
-        try{
-        search.searchFlight();
+        try {
+            search.searchFlight();
             test.log(LogStatus.PASS, test.addScreenCapture(Utility.screenshot("searchFlightPage")));
         } catch (InterruptedException e) {
             test.log(LogStatus.FAIL, test.addScreenCapture(Utility.screenshot("searchFlightPage")));
@@ -59,7 +42,7 @@ public class MakeMyTripTest extends Base {
     @Test(priority = 2)
     public void whenOneStopFilterApplied_ShouldPrintOneStopFLights() throws IOException {
         search = new Search(webdriver);
-        try{
+        try {
             search.printOneStopFlights();
             test.log(LogStatus.PASS, test.addScreenCapture(Utility.screenshot("OneStopFlight")));
         } catch (IOException e) {
@@ -72,7 +55,7 @@ public class MakeMyTripTest extends Base {
     @Test(priority = 3)
     public void whenNonStopFilterApplied_ShouldPrintNonStopFLights() throws IOException {
         search = new Search(webdriver);
-        try{
+        try {
             search.printNonStopFlights(webdriver);
             test.log(LogStatus.PASS, test.addScreenCapture(Utility.screenshot("NonStopFlight")));
         } catch (IOException e) {
@@ -82,23 +65,16 @@ public class MakeMyTripTest extends Base {
 
     }
 
+    //test to check functionality of book feature
     @Test(priority = 4)
     public void whenGivenListOfFlight_ShouldBookFlight() throws IOException {
         book = new BookFlight(webdriver);
-        try{
+        try {
             book.bookFlight();
             test.log(LogStatus.PASS, test.addScreenCapture(Utility.screenshot("BookFlight")));
         } catch (IOException e) {
             test.log(LogStatus.FAIL, test.addScreenCapture(Utility.screenshot("BookFlight")));
             e.printStackTrace();
         }
-    }
-
-    //method to run after class to generate extent report
-    @AfterClass
-    public static void endTest()
-    {
-        report.endTest(test);
-        report.flush();
     }
 }

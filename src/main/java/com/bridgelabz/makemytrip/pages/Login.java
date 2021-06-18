@@ -38,10 +38,9 @@ public class Login {
     //method to login into MakeMyTrip Application
     public void loginToAccount() throws InterruptedException {
         Thread.sleep(5000);
-        if (login.isDisplayed()){
+        if (login.isDisplayed()) {
             login.click();
-        }
-        else if (loginWithEmail.isDisplayed()) {
+        } else if (loginWithEmail.isDisplayed()) {
             loginWithEmail.click();
         }
         username.clear();

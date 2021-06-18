@@ -15,4 +15,7 @@
             </class>
         </classes>
     </test>
+    <listeners>
+        <listener class-name="com.bridgelabz.makemytrip.utility.TestNgListener"></listener>
+    </listeners>
 </suite>

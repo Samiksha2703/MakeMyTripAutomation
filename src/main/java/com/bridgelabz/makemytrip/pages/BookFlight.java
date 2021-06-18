@@ -1,12 +1,9 @@
 package com.bridgelabz.makemytrip.pages;
 
-import com.bridgelabz.makemytrip.utility.Utility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.Arrays;
 
 public class BookFlight {
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div/div[2]/div/div/div/div[1]/div[2]/div/label[1]/div")
